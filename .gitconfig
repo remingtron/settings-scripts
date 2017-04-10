@@ -1,0 +1,25 @@
+[user]
+	email = remington.davenport@gmail.com
+	name = Remington Davenport
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	hist = log --pretty=format:'%C(green bold)%h %C(yellow)%ad %C(white bold)| %C(green)%s%C(auto)%d %C(cyan bold)[%an]' --graph --date=short --all
+	rv = remote -v
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+[core]
+	excludesfile = /Users/remington/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/remington/.stCommitMsg
+[pull]
+        rebase = true
+[merge]
+        ff = only
