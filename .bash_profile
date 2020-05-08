@@ -9,9 +9,14 @@ export PATH=$PATH:/usr/local/bin
 export NVM_DIR="$HOME/.nvm"
 . /usr/local/Cellar/nvm/0.32.1/nvm.sh
 
-source ~/git_tools/git-prompt.sh
-source ~/git_tools/git-completion.bash
-PS1='\u@\h \W$(__git_ps1 " (%s)")\$ '
+RESET="\[\033[0m\]"
+RED="\[\033[0;31m\]"
+GREEN="\[\033[1;32m\]"
+CYAN="\[\033[0;36m\]"
+PURPLE="\[\033[0;35m\]"
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+export PS1="$RESET\n\A $GREEN\u@\h $PURPLE\w $CYAN\$(__git_ps1 '(%s)')\n$RED\$$RESET "
 
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export CLICOLOR=1
